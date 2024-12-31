@@ -8,7 +8,7 @@ const LazyRegister = React.lazy(() => import('@/pages/Auth/Register'));
 export default function Index() {
   return (
     <Routes>
-      <Route path='/' element={<Test />} />
+      <Route path='/test' element={<Test />} />
       <Route
         path='/login'
         element={

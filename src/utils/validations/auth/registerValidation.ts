@@ -1,6 +1,6 @@
 import { IFormData, IFormErrors } from '@/utils/types/register';
 
-export const validateForm = (
+export const registerValidation = (
   formData: IFormData
 ): { errors: IFormErrors; isValid: boolean } => {
   const errors: IFormErrors = {};

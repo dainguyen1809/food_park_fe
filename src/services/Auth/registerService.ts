@@ -1,6 +1,6 @@
 import { registerUser } from '@/api/Auth/register';
 import { IFormData, IFormErrors } from '@/utils/types/register';
-import { validateForm } from '@/utils/validation/auth/register';
+import { registerValidation } from '@/utils/validations/auth/registerValidation';
 
 export const handleRegisterSubmit = async (
   formData: IFormData,
@@ -12,7 +12,7 @@ export const handleRegisterSubmit = async (
   setLoading(true);
   setErrors({});
 
-  const { errors, isValid } = validateForm(formData);
+  const { errors, isValid } = registerValidation(formData);
 
   if (!isValid) {
     setErrors(errors);
@@ -22,7 +22,7 @@ export const handleRegisterSubmit = async (
 
   try {
     await registerUser(formData);
-    // navigate('/test');
+    navigate('/test');
   } catch (error) {
     setErrorMessage(
       error instanceof Error ? error.message : 'An error occurred!'

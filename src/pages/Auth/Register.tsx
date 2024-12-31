@@ -3,6 +3,7 @@ import { useNavigate } from 'react-router-dom';
 import logo from '@/assets/img/stisla-fill.svg';
 import { IFormData, IFormErrors } from '@/utils/types/register';
 import { handleRegisterSubmit } from '@/services/Auth/registerService';
+import { NavLink } from 'react-router-dom';
 
 const Register: React.FC = () => {
   const navigate = useNavigate();
@@ -106,7 +107,7 @@ const Register: React.FC = () => {
                     </label>
                     <input
                       id='password'
-                      type='password'
+                      type=''
                       className={`form-control ${
                         errors.password ? 'is-invalid' : ''
                       }`}
@@ -124,7 +125,7 @@ const Register: React.FC = () => {
                     </label>
                     <input
                       id='password_confirmation'
-                      type='password'
+                      type=''
                       className={`form-control ${
                         errors.password_confirmation ? 'is-invalid' : ''
                       }`}
@@ -152,6 +153,12 @@ const Register: React.FC = () => {
                   >
                     {loading ? 'Registering...' : 'Register'}
                   </button>
+                </div>
+
+                <div className='col-12 text-center'>
+                  <NavLink className='text-decoration-none' to='/login'>
+                    Already an account?
+                  </NavLink>
                 </div>
               </form>
             </div>
